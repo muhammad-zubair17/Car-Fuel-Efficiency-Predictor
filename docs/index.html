@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Fuel Efficiency Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-gas-pump"></i> Car Fuel Efficiency Predictor</h1>
+            <p class="subtitle">Predict MPG using Linear Regression | UCI Auto MPG Dataset</p>
+        </header>
+
+        <main class="main-content">
+            <div class="grid-container">
+
+                <!-- Prediction Card -->
+                <div class="card prediction-card">
+                    <h2><i class="fas fa-calculator"></i> Predict MPG</h2>
+                    <p class="card-description">Enter car specifications to predict fuel efficiency</p>
+                    
+                    <form id="predict-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="cylinders"><i class="fas fa-cogs"></i> Cylinders</label>
+                                <input type="number" id="cylinders" name="cylinders" min="3" max="8" step="1" value="4" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="displacement"><i class="fas fa-tachometer-alt"></i> Engine Displacement</label>
+                                <input type="number" id="displacement" name="displacement" min="60" max="500" step="1" value="150" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="horsepower"><i class="fas fa-horse"></i> Horsepower</label>
+                                <input type="number" id="horsepower" name="horsepower" min="40" max="250" step="1" value="100" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="weight"><i class="fas fa-weight-hanging"></i> Weight</label>
+                                <input type="number" id="weight" name="weight" min="1500" max="5500" step="10" value="3000" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="acceleration"><i class="fas fa-running"></i> Acceleration</label>
+                                <input type="number" id="acceleration" name="acceleration" min="8" max="25" step="0.1" value="15.5" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="model_year"><i class="fas fa-calendar-alt"></i> Model Year</label>
+                                <input type="number" id="model_year" name="model_year" min="1900" max="2025" step="1" value="2000" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-predict">
+                            <i class="fas fa-rocket"></i> Predict MPG
+                        </button>
+                    </form>
+
+                    <div id="result" class="result-container" style="display: none;">
+                        <h3><i class="fas fa-chart-line"></i> Prediction Result</h3>
+                        <div class="prediction-result">
+                            <div class="prediction-value">
+                                <span class="mpg-value" id="predictedMPG">0</span>
+                                <span class="mpg-label">MPG</span>
+                            </div>
+                            <p class="prediction-text" id="efficiencyText"></p>
+                            <div class="features-used">
+                                <h4><i class="fas fa-list"></i> Features Used:</h4>
+                                <div class="features-grid" id="featuresGrid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW CARD: Fuel Cost Calculator -->
+                <div class="card">
+                    <h2><i class="fas fa-gas-pump"></i> Fuel Cost Calculator</h2>
+                    <p class="card-description">Estimate your yearly fuel expense</p>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-road"></i> Kilometers per year</label>
+                        <input type="number" id="distance" value="15000">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-dollar-sign"></i> Fuel Price per Liter</label>
+                        <input type="number" id="fuelPrice" value="275">
+                    </div>
+
+                    <button class="btn-predict" id="calcFuel">
+                        <i class="fas fa-calculator"></i> Calculate Fuel Cost
+                    </button>
+
+                    <div id="fuelResult" class="result-container" style="display:none;">
+                        <h3><i class="fas fa-wallet"></i> Estimated Yearly Fuel Cost</h3>
+                        <p id="fuelCostText" class="prediction-text"></p>
+                    </div>
+                </div>
+
+                <!-- Info Card (unchanged) -->
+                <div class="card info-card">
+                    <h2><i class="fas fa-info-circle"></i> Project Information</h2>
+                    <div class="info-section">
+                        <h3><i class="fas fa-project-diagram"></i> About This Project</h3>
+                        <p>This project predicts a car's MPG using Linear Regression trained on the UCI Auto MPG dataset.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><i class="fas fa-lightbulb"></i> Real-World Use</h3>
+                        <p>Useful for estimating running costs and comparing different vehicles.</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Car Fuel Efficiency Predictor | UCI Auto MPG Dataset</p>
+        </footer>
+    </div>
+
+    <script src='script.js'></script>
+
+</body>
+</html>
