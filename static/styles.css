@@ -1,0 +1,227 @@
+/* ===============================
+   RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===============================
+   BODY + BACKGROUND (F1 IMAGE)
+================================ */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            rgba(244, 246, 251, 0.5),
+            rgba(244, 246, 251, 0.5)
+        ),
+        url("/static/images/f1-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.header {
+    text-align: center;
+    background: #af0c17;
+    color: white; /* FIX */
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    color: white; /* FIX */
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #f1f1f1; /* FIX */
+}
+
+/* ===============================
+   GRID LAYOUT
+================================ */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.card {
+    background: rgb(43, 42, 42);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: white; /* FIX */
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: white; /* FIX */
+}
+
+.card-description {
+    color: #dddddd; /* FIX */
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   CENTER LAST CARD
+================================ */
+.card:last-child {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===============================
+   FORM
+================================ */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: white; /* FIX */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #302c2c;
+    background: white;
+    color: black;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background: #761010;
+    color: white; /* FIX */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7e0b0b;
+}
+
+/* ===============================
+   RESULT SECTION
+================================ */
+.result-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #222328;
+    border-radius: 10px;
+    text-align: center;
+    color: white; /* FIX */
+}
+
+.mpg-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff4d4d; /* FIX */
+}
+
+/* ===============================
+   FEATURES GRID
+================================ */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.feature-item {
+    background: #27272b;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    color: white; /* FIX */
+}
+
+/* ===============================
+   TABLE
+================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgb(41, 37, 37);
+    color: white; /* FIX */
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #2e2626;
+    text-align: left;
+    color: white; /* FIX */
+}
+
+th {
+    background: #691616;
+    color: white; /* FIX */
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #dddddd; /* FIX */
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card:last-child {
+        max-width: 100%;
+    }
+}
