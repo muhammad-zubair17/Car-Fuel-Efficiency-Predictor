@@ -14,10 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let formData = new FormData(form);
 
-        let response = await fetch("/predict", {
+        let response = await fetch("https://car-fuel-efficiency-predictor.onrender.com/predict", {
             method: "POST",
             body: formData
         });
+
 
         let res = await response.json();
 
